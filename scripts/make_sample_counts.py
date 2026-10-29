@@ -1,4 +1,5 @@
 import json
+import os
 
 import pandas as pd
 
@@ -18,6 +19,13 @@ y0 = 110000
 side = 6561.68
 
 out = make_daily_counts(df, x0, y0, side)
+
+if os.path.isdir("data") == False:
+    os.mkdir("data")
+
+if os.path.isdir("data/processed") == False:
+    os.mkdir("data/processed")
+
 save_counts(out, "data/processed/nypd_sample_daily_counts.csv")
 
 print("days", len(out))

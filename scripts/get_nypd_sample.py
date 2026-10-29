@@ -1,4 +1,5 @@
 import json
+import os
 
 import requests
 
@@ -12,6 +13,12 @@ params["$limit"] = 5000
 r = requests.get(url, params=params, timeout=60)
 r.raise_for_status()
 vals = r.json()
+
+if os.path.isdir("data") == False:
+    os.mkdir("data")
+
+if os.path.isdir("data/raw") == False:
+    os.mkdir("data/raw")
 
 f = open("data/raw/nypd_2012_07_01_to_03.json", "w")
 json.dump(vals, f)
