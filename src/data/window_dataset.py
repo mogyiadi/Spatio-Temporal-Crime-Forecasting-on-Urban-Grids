@@ -31,7 +31,10 @@ def build_grid_graph(
                 # add both directions so message passing works symmetrically
                 edges.append((idx, coord_to_node[neighbor]))
 
-    edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
+    if len(edges) == 0:
+        edge_index = torch.empty((2, 0), dtype=torch.long)
+    else:
+        edge_index = torch.tensor(edges, dtype=torch.long).t().contiguous()
 
     if distance_weighted:
         if centroids is None:
