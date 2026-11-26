@@ -3,6 +3,8 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/processed/nypd_2012_2013.npz
+!data/processed/nypd_2012_2013_meta.json
 checkpoints/
 wandb/
 
