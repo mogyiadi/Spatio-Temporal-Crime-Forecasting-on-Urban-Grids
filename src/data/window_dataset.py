@@ -56,7 +56,7 @@ class WindowConfig:
     # holds split ratios and window dimensions for building datasets
     train_ratio: float = 0.70
     val_ratio: float = 0.15
-    history_len: int = 14
+    history_len: int = 5
     horizon: int = 1
     distance_weighted: bool = False
     sigma_km: float = 2.0

@@ -15,8 +15,8 @@ class STGCN(nn.Module):
         history_len: int,
         hidden_channels: int = 32,
         out_channels: int = 32,
-        num_layers: int = 2,
-        kernel_size: int = 3,
+        num_layers: int = 1,
+        kernel_size: int = 2,
         cheb_k: int = 2,
         dropout: float = 0.2,
     ):
